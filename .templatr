@@ -1,6 +1,6 @@
 {
-  "name": "Quest Mod Template",
-  "author": "Lauriethefish",
+  "name": "JD'S Quest Mod Template",
+  "author": "JD The 65th",
   "src": "./template",
   "description": "Template for creating QuestPatcher/BMBF mods for the Oculus Quest.",
   "placeholders": [
