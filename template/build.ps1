@@ -11,7 +11,6 @@ if ($help -eq $true) {
     echo "`n-- Arguments --`n"
 
     echo "-Clean `t`t Deletes the `"build`" folder, so that the entire library is rebuilt"
-
     exit
 }
 
@@ -30,7 +29,7 @@ if (($clean.IsPresent) -or (-not (Test-Path -Path "build")))
     $out = new-item -Path build -ItemType Directory
 } 
 
-cd build
-& cmake -G "Ninja" -DCMAKE_BUILD_TYPE="RelWithDebInfo" ../
-& cmake --build .
-cd ..
+& cmake -G "Ninja" -DCMAKE_BUILD_TYPE="RelWithDebInfo" -B build
+& cmake --build ./build
+$ExitCode = $LastExitCode
+exit $ExitCode
